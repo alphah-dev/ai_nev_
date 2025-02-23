@@ -2,23 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI GeoGuide</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>AI GeoGuide</h1>
-        <form id="recommendForm">
-            <input type="text" name="preferences" placeholder="e.g., history, food" required>
+        <form id="signupForm" class="signup-form">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="signup-btn">Sign Up</button>
+            <p class="login-link">Already have an account?</p>
+        </form>
+
+        <div class="preferences-section" style="display: none;">
+            <h2>Set Preferences</h2>
+            <div class="preferences-grid">
+                <button class="pref-btn" data-pref="travel"><i class="fas fa-compass"></i> Travel Interests</button>
+                <button class="pref-btn" data-pref="budget"><i class="fas fa-money-bill"></i> Budget</button>
+                <button class="pref-btn" data-pref="language"><i class="fas fa-globe"></i> Language</button>
+            </div>
+        </div>
+
+        <form id="recommendForm" class="recommend-form" style="display: none;">
+            <input type="text" name="preferences" placeholder="e.g., travel, budget" required style="display: none;">
             <input type="number" name="time" placeholder="Hours" step="0.5" min="1" required>
-            <input type="number" name="lat" placeholder="Latitude" value="51.5074" required>
-            <input type="number" name="lon" placeholder="Longitude" value="-0.1278" required>
-            <button type="submit">Plan Trip</button>
+            <input type="number" name="lat" value="51.5074" required style="display: none;">
+            <input type="number" name="lon" value="-0.1278" required style="display: none;">
+            <button type="submit" class="explore-btn">Explore</button>
         </form>
         <div id="result"></div>
     </div>
     <div id="map"></div>
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active"><i class="fas fa-home"></i> Home</a>
+        <a href="#" class="nav-item"><i class="fas fa-search"></i> Search</a>
+        <a href="#" class="nav-item"><i class="fas fa-bookmark"></i> Saved</a>
+    </nav>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>

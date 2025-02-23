@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-grow: 1;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+.signup-form, .recommend-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.signup-btn, .explore-btn {
+    padding: 12px;
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.signup-btn:hover, .explore-btn:hover {
+    background: #7d3c9e;
+}
+.login-link {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+.preferences-section {
+    margin: 20px 0;
+}
+.preferences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.pref-btn {
+    padding: 12px;
+    background: #e8e8f5;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+.pref-btn:hover {
+    background: #d7d7e8;
+}
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    color: #2c3e50;
+}
+#map {
+    height: 300px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 10px;
+}
+.bottom-nav {
+    background: #2c3e50;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+.nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav-item.active {
+    color: #8e44ad;
+}
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+    .container, #map {
+        max-width: 700px;
+    }
+    #map {
+        height: 400px;
+    }
+}
